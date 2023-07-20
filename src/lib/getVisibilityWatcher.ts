@@ -62,6 +62,7 @@ const removeChangeListeners = () => {
 };
 
 export const getVisibilityWatcher = () => {
+  // 这里的if是为了第一次进来的时候，注册事件监听，仅注册一次。
   if (firstHiddenTime < 0) {
     // If the document is hidden when this code runs, assume it was hidden
     // since navigation start. This isn't a perfect heuristic, but it's the

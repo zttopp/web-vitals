@@ -48,6 +48,7 @@ export const initMetric = <MetricName extends MetricType['name']>(
   return {
     name,
     value: typeof value === 'undefined' ? -1 : value,
+    // as const 类型断言，告诉ts这个值不会变，是只读的
     rating: 'good' as const, // If needed, will be updated when reported. `const` to keep the type from widening to `string`.
     delta: 0,
     entries,

@@ -38,6 +38,7 @@ export const bindReporter = <MetricName extends MetricType['name']>(
   let prevValue: number;
   let delta: number;
   return (forceReport?: boolean) => {
+    // 返回一个函数，如果调用传参true，就执行创建时的那个callback
     if (metric.value >= 0) {
       if (forceReport || reportAllChanges) {
         delta = metric.value - (prevValue || 0);

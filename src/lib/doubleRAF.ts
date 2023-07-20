@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+// 每帧都执行callback
 export const doubleRAF = (cb: () => unknown) => {
   requestAnimationFrame(() => requestAnimationFrame(() => cb()));
 };

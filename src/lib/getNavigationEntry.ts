@@ -16,6 +16,7 @@
 
 import {NavigationTimingPolyfillEntry} from '../types.js';
 
+// 生成 Navigation Timing API 的 Polyfill 对象，用于兼容不支持 Navigation Timing API 的浏览器
 const getNavigationEntryFromPerformanceTiming =
   (): NavigationTimingPolyfillEntry => {
     const timing = performance.timing;

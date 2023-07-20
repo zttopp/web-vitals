@@ -27,6 +27,7 @@ export const onBFCacheRestore = (cb: onBFCacheRestoreCallback) => {
     'pageshow',
     (event) => {
       if (event.persisted) {
+        // 页面从缓存中恢复，就更新bfcacheRestoreTime，然后执行cb
         bfcacheRestoreTime = event.timeStamp;
         cb(event);
       }
